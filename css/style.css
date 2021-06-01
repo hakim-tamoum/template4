@@ -1,0 +1,104 @@
+:root {
+    --main--color : #3fff00
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* start landing box */
+.settings-box {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    background-color: rgba(63, 255, 0, 0.5);
+    width: 250px;
+    z-index: 9;
+    min-height: 100vh;
+    transition: .3s;
+    box-shadow: 5px -2px 3px 2px rgba(63, 255, 0, 0.5);
+}
+.settings-box.open {left: 0;}
+
+.settings-box .toggle-settings{
+    position: absolute;
+    right: -37px;
+    top: 100px;
+    background-color: rgba(63, 255, 0, 0.5);
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 1px -1px 1px 1px rgba(63, 255, 0, 0.5);
+    border: 1px solid #39ad12;
+    font-size: 25px;
+}
+.settings-box .toggle-settings .fa-gear{
+    padding: 4px 2px;
+    width: 30px;
+}
+.settings-box .settings-container{
+    
+}
+/* end landing box */
+/* start landing page */
+.landing-page {
+    min-height: 100vh; /* vh = viewport height */
+    background-image: url('../img/2.jpg');
+    background-size: cover; /* cover = plein ecran */
+    position: relative;
+}
+.landing-page .overlay {
+    background-color: rgba(0,0,0,0.47);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.landing-page .heading-area{
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    display: flex;
+    padding: 10px;
+}
+.heading-area .logo {
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
+.heading-area .links {
+    list-style: none;
+    text-align: right;
+    width: 100%;
+    padding-left: 0;
+    padding-right: 20px;
+}
+.heading-area .links li{
+    display: inline-block;
+    margin-left: 10px;
+}
+.landing-page .introduction-text{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    text-align: center;
+}
+.introduction-text h1 {
+    font-size: 42px;
+    margin: 0 0 15px;
+}
+.heading-area .links li span {
+    color: var(--main--color);
+}
+.introduction-text h1 span {
+    color: var(--main--color);
+}
+.introduction-text p {
+    line-height: 1.6;
+    font-size: 22px;
+}
+
+/* end landing page */

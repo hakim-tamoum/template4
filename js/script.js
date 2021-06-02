@@ -1,8 +1,10 @@
 // check if there's local storage colocr option
 let mainColors = localStorage.getItem("color_option");
+
 if (mainColors !== null) {
+    
     document.documentElement.style.setProperty('--main--color', localStorage.getItem("color_option"));
-}
+};
 
 // toggle spin icon gear
 document.querySelector(".toggle-settings .fa-gear").onclick = function(){
@@ -20,6 +22,8 @@ colorsLi.forEach(li => {
     li.addEventListener("click", (e) => {
         //set color on root
         document.documentElement.style.setProperty('--main--color', e.target.dataset.color);
+        // set color on local storage
+        localStorage.setItem("color_option", e.target.dataset.color);
     });
 });
 

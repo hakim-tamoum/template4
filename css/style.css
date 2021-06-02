@@ -10,24 +10,25 @@ body {
     position: fixed;
     left: -250px;
     top: 0;
-    background-color: rgba(63, 255, 0, 0.5);
+    background-color: var(--main--color);
     width: 250px;
     z-index: 9;
     min-height: 100vh;
     transition: .5s;
-    box-shadow: 5px -2px 3px 2px rgba(63, 255, 0, 0.5);
+    box-shadow: 3px -10px 15px 7px var(--main--color);
+    opacity: .5;
 }
 .settings-box.open {left: 0;}
 
 .settings-box .toggle-settings{
     position: absolute;
-    right: -37px;
+    right: -36px;
     top: 100px;
-    background-color: rgba(63, 255, 0, 0.5);
+    background-color: var(--main--color);
     text-align: center;
     cursor: pointer;
-    box-shadow: 1px -1px 1px 1px rgba(63, 255, 0, 0.5);
-    border: 1px solid #39ad12;
+    box-shadow: 1px -1px 1px 1px var(--main--color);
+    border: 1px solid var(--main--color);
     font-size: 25px;
 }
 .settings-box .toggle-settings .fa-gear{
@@ -35,7 +36,50 @@ body {
     width: 30px;
 }
 .settings-box .settings-container{
-    
+    background-color: rgba(0,0,0,0.47);
+    width: 220px;
+    margin:50px 10px  10px;
+}
+.settings-box .option-box {
+    padding: 20px;
+}
+.settings-container .option-box h4 {
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+}
+.settings-container .option-box .colors-list {
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+.settings-container .option-box .colors-list li {
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 1;
+    cursor: pointer;
+}
+.settings-container .option-box .colors-list li.active{ 
+    opacity: 1;
+}
+.settings-container .option-box .colors-list li:first-child{
+    background-color: #3fff00;
+}
+.settings-container .option-box .colors-list li:nth-child(2){
+    background-color: #e91e63;
+}
+.settings-container .option-box .colors-list li:nth-child(3){
+    background-color: #009688;
+}
+.settings-container .option-box .colors-list li:nth-child(4){
+    background-color: #03a9f4;
+}
+.settings-container .option-box .colors-list li:nth-child(5){
+    background-color: #ff9800;
 }
 /* end landing box */
 /* start landing page */

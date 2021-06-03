@@ -1,6 +1,9 @@
 :root {
     --main--color : #3fff00
 }
+* {
+    box-sizing: border-box;
+}
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -36,35 +39,40 @@ body {
     width: 30px;
 }
 .settings-box .settings-container{
-    background-color: rgba(0,0,0,0.47);
-    width: 220px;
-    margin:50px 10px  10px;
+    width: 230px;
+    margin:60px 0px  0px;
 }
 .settings-box .option-box {
-    padding: 20px;
+    padding: 10px;
+    text-align: center;
+    background-color: #eee;
+    margin-left: 15px;
 }
 .settings-container .option-box h4 {
     margin: 0;
-    color: #333;
+    color: #222;
     font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 .settings-container .option-box .colors-list {
     list-style: none;
     text-align: center;
     padding: 0;
+    margin: 0;
 }
 .settings-container .option-box .colors-list li {
     width: 20px;
     height: 20px;
-    background-color: #333;
     border-radius: 50%;
     display: inline-block;
     margin-left: 10px;
-    opacity: 1;
+    opacity: .7;
     cursor: pointer;
 }
 .settings-container .option-box .colors-list li.active{ 
     opacity: 1;
+    border: 1px solid #222;
 }
 .settings-container .option-box .colors-list li:first-child{
     background-color: #3fff00;

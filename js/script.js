@@ -15,6 +15,29 @@ if (mainColors !== null) {
     
 };
 
+//get array of img
+let backgroundOption = true;
+// variable to control the interval
+let backgroundInterval;
+
+//check if there's local storage random background item
+let backgroundLocalItem = localStorage.getItem("background_option");
+
+//check if random background local storage is not EMpty
+if (backgroundLocalItem !== null) {
+    if (backgroundLocalItem === 'true'){
+        backgroundOption = true;
+    }else {
+        backgroundOption = false;
+    }
+    //remove active class from all spans
+    document.querySelectorAll(".Random-Backgrounds span").forEach(element => {
+        document.classList.remove("active");
+    });
+    if (backgroundLocalItem === 'true') {
+        document.querySelector(".Random-Backgrounds .yes").classList.add("active");
+    }
+}
 // toggle spin icon gear
 document.querySelector(".toggle-settings .fa-gear").onclick = function(){
     // toggle class fa-spin for rotation on self
@@ -55,6 +78,14 @@ randomBackEl.forEach(span => {
         });
         //add active class on seft
         e.target.classList.add("active");
+
+        if (e.target.dataset.background === 'yes'){
+            backgroundOption = true;
+            randomizeImgs();
+        }else {
+            backgroundOption = false;
+            clearInterval(backgroundInterval);
+        }
     });
 });
 
@@ -63,11 +94,16 @@ let landingPage = document.querySelector(".landing-page");
 // get array of imgs
 let imgsArray = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg",];
 
-//get array of img
-let backgroundOption = true;
-setInterval(function() { //setInterval(() => { 
-    //get random number الرقم العشوائي
-    let randomNumber = Math.floor(Math.random() * imgsArray.length);
-    //change background image url
-    landingPage.style.backgroundImage = 'url("img/' + imgsArray[randomNumber] + '")';
-}, 4000);
+// function randomize imgs
+function randomizeImgs() {
+
+    if (backgroundOption === true) {
+        setInterval(function() { //setInterval(() => { 
+            //get random number الرقم العشوائي
+            let randomNumber = Math.floor(Math.random() * imgsArray.length);
+            //change background image url
+            landingPage.style.backgroundImage = 'url("img/' + imgsArray[randomNumber] + '")';
+        }, 1000);
+    }
+};
+randomizeImgs();

@@ -13,19 +13,20 @@ body {
     position: fixed;
     left: -250px;
     top: 0;
-    background-color: var(--main--color);
+    background-color: #000;
     width: 250px;
     z-index: 9;
     min-height: 100vh;
     transition: .5s;
-    box-shadow: 3px -10px 15px 7px var(--main--color);
+    box-shadow: 1px -10px 1px 2px var(--main--color);
     opacity: .5;
+    border-right: 2px solid var(--main--color);
 }
 .settings-box.open {left: 0;}
 
 .settings-box .toggle-settings{
     position: absolute;
-    right: -36px;
+    right: -32px;
     top: 100px;
     background-color: var(--main--color);
     text-align: center;
@@ -47,13 +48,14 @@ body {
     text-align: center;
     background-color: #eee;
     margin-left: 15px;
+    margin-bottom: 15px;
 }
 .settings-container .option-box h4 {
     margin: 0;
-    color: #222;
+    color: #000;
     font-weight: bold;
-    font-size: 20px;
-    margin-bottom: 10px;
+    font-size: 17px;
+    margin-bottom: 15px;
 }
 .settings-container .option-box .colors-list {
     list-style: none;
@@ -89,7 +91,23 @@ body {
 .settings-container .option-box .colors-list li:nth-child(5){
     background-color: #ff9800;
 }
+.settings-box .Random-Backgrounds span.active{ opacity: 1; background-color: var(--main--color);}
+.settings-box .Random-Backgrounds .yes,
+.settings-box .Random-Backgrounds .no { 
+    width: 50px;
+    background-color: #000;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    opacity: .5;
+    margin-left: 5px;
+    cursor: pointer;
+}
 /* end landing box */
+
 /* start landing page */
 .landing-page {
     min-height: 100vh; /* vh = viewport height */
@@ -124,6 +142,7 @@ body {
     width: 100%;
     padding-left: 0;
     padding-right: 20px;
+    cursor: pointer;
 }
 .heading-area .links li{
     display: inline-block;

@@ -42,10 +42,29 @@ colorsLi.forEach(li => {
     });
 });
 
+//switch random background
+const randomBackEl = document.querySelectorAll(".Random-Backgrounds span");
+//loop on all span
+randomBackEl.forEach(span => {
+    //click on every list items
+    span.addEventListener("click", (e) => {
+        
+        // remove active class from all childrens
+        e.target.parentElement.querySelectorAll(".active").forEach(element => {
+            element.classList.remove("active");
+        });
+        //add active class on seft
+        e.target.classList.add("active");
+    });
+});
+
 // select landing page element
 let landingPage = document.querySelector(".landing-page");
 // get array of imgs
 let imgsArray = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg",];
+
+//get array of img
+let backgroundOption = true;
 setInterval(function() { //setInterval(() => { 
     //get random number الرقم العشوائي
     let randomNumber = Math.floor(Math.random() * imgsArray.length);

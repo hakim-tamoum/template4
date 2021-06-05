@@ -31,11 +31,13 @@ if (backgroundLocalItem !== null) {
         backgroundOption = false;
     }
     //remove active class from all spans
-    document.querySelectorAll(".Random-Backgrounds span").forEach(element => {
-        document.classList.remove("active");
+    document.querySelectorAll(".random-backgrounds span").forEach(element => {
+        element.classList.remove("active");
     });
     if (backgroundLocalItem === 'true') {
-        document.querySelector(".Random-Backgrounds .yes").classList.add("active");
+        document.querySelector(".random-backgrounds .yes").classList.add("active");
+    }else {
+        document.querySelector(".random-backgrounds .no").classList.add("active");
     }
 }
 // toggle spin icon gear
@@ -66,7 +68,7 @@ colorsLi.forEach(li => {
 });
 
 //switch random background
-const randomBackEl = document.querySelectorAll(".Random-Backgrounds span");
+const randomBackEl = document.querySelectorAll(".random-backgrounds span");
 //loop on all span
 randomBackEl.forEach(span => {
     //click on every list items
@@ -82,9 +84,11 @@ randomBackEl.forEach(span => {
         if (e.target.dataset.background === 'yes'){
             backgroundOption = true;
             randomizeImgs();
+            localStorage.setItem("background_option", true);
         }else {
             backgroundOption = false;
             clearInterval(backgroundInterval);
+            localStorage.setItem("background_option", false);
         }
     });
 });
@@ -94,16 +98,16 @@ let landingPage = document.querySelector(".landing-page");
 // get array of imgs
 let imgsArray = ["1.jpg","2.jpg","3.jpg","4.jpg","5.jpg",];
 
-// function randomize imgs
+// function to randomize imgs
 function randomizeImgs() {
 
     if (backgroundOption === true) {
-        setInterval(function() { //setInterval(() => { 
+        backgroundInterval = setInterval(function() { //setInterval(() => { 
             //get random number الرقم العشوائي
             let randomNumber = Math.floor(Math.random() * imgsArray.length);
             //change background image url
             landingPage.style.backgroundImage = 'url("img/' + imgsArray[randomNumber] + '")';
-        }, 1000);
+        }, 4000);
     }
 };
 randomizeImgs();

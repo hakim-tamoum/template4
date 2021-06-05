@@ -20,7 +20,7 @@ body {
     transition: .5s;
     box-shadow: 1px -10px 1px 2px var(--main--color);
     opacity: .5;
-    border-right: 2px solid var(--main--color);
+    border-right: 1px solid var(--main--color);
 }
 .settings-box.open {left: 0;}
 
@@ -32,7 +32,6 @@ body {
     text-align: center;
     cursor: pointer;
     box-shadow: 1px -1px 1px 1px var(--main--color);
-    border: 1px solid var(--main--color);
     font-size: 25px;
 }
 .settings-box .toggle-settings .fa-gear{
@@ -91,9 +90,9 @@ body {
 .settings-container .option-box .colors-list li:nth-child(5){
     background-color: #ff9800;
 }
-.settings-box .Random-Backgrounds span.active{ opacity: 1; background-color: var(--main--color);}
-.settings-box .Random-Backgrounds .yes,
-.settings-box .Random-Backgrounds .no { 
+.settings-box .random-backgrounds span.active{ opacity: 1; background-color: var(--main--color);}
+.settings-box .random-backgrounds .yes,
+.settings-box .random-backgrounds .no { 
     width: 50px;
     background-color: #000;
     color: #fff;

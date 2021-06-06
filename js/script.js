@@ -107,7 +107,7 @@ function randomizeImgs() {
             let randomNumber = Math.floor(Math.random() * imgsArray.length);
             //change background image url
             landingPage.style.backgroundImage = 'url("img/' + imgsArray[randomNumber] + '")';
-        }, 4000);
+        }, 3000);
     }
 };
 randomizeImgs();

@@ -52,7 +52,7 @@ body {
     text-align: center;
     background-color: #eee;
     margin-left: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 }
 .settings-container .option-box h4 {
     margin: 0;
@@ -247,6 +247,7 @@ body {
     background: #f6f6f6;
     border-radius: 6px;
     position: relative;
+    overflow: hidden;
 }
 .skills .skill-box .skill-progress span {
     position: absolute;
@@ -255,6 +256,8 @@ body {
     width: 50%;
     height: 100%;
     background-color: var(--main--color);
+    transition: all .5s ease-in-out;
+    
 }
 
 
